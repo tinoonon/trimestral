@@ -617,27 +617,7 @@
 
     // Função para usar back redirect
     function setupBackRedirect() {
-        var useBackRedirect = $('#redirect-data').data('use-back-redirect') === 'True';
-        var backRedirectUrl = $('#redirect-data').data('back-redirect-url');
-
-        if (useBackRedirect && backRedirectUrl && backRedirectUrl !== 'null' && backRedirectUrl !== '') {
-            var urlBackRedirect = backRedirectUrl.trim() +
-                (backRedirectUrl.indexOf('?') > 0 ? '&' : '?') +
-                window.location.search.replace('?', '');
-
-            history.pushState({}, '', location.href);
-            history.pushState({}, '', location.href);
-            history.pushState({}, '', location.href);
-
-            $(window).on('popstate', function () {
-                console.log('onpopstate triggered');
-                console.log('Redirecting to:', urlBackRedirect);
-
-                setTimeout(function () {
-                    window.location.href = urlBackRedirect;
-                }, 1);
-            });
-        }
+        // Redirecionamento de volta removido
     }
 
     // Função para adicionar máscara de CPF/CNPJ
